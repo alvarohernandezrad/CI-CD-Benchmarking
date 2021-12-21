@@ -18,4 +18,4 @@ steps:
   args:
   - '-c'
   - |
-    curl http://0.0.0.0:3000/
+    curl http://172.18.0.1:3000/
