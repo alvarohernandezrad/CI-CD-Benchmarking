@@ -11,4 +11,4 @@ steps:
     ls
     
 - name: 'docker/compose:1.19.0'
-  args: ['--version']
+  args: ['-f', 'CI-CD-Benchmarking/web-app/docker-compose.yml', 'up', '-d']
