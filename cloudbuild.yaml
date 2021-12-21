@@ -12,3 +12,10 @@ steps:
     
 - name: 'docker/compose:1.19.0'
   args: ['-f', 'CI-CD-Benchmarking/web-app/docker-compose.yml', 'up', '-d']
+  
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: /bin/sh
+  args:
+  - '-c'
+  - |
+    curl http://localhost:3000/
