@@ -5,4 +5,5 @@ steps:
   args:
   - '-c'
   - |
+    apt install net-tools && \
     ifconfig
