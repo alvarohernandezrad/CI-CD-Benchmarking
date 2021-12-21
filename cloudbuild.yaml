@@ -20,7 +20,7 @@ steps:
     - -c
     - |
       gcloud compute instances describe jfrog \
-      --zone us-central1-a \
+         --zone europe-west1-b \
       --format="value(networkInterfaces.networkIP)" >> _INTERNAL_IP_ADDRESS
 
   
