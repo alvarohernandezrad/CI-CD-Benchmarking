@@ -4,4 +4,4 @@ steps:
   args: ['clone', 'https://github.com/alvarohernandezrad/CI-CD-Benchmarking']
 
 - name: 'bash'
-  args: ['ls']
+  args: ['cd', 'CI-CD-Benchmarking/web-app', '|', 'ls']
