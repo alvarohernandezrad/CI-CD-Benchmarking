@@ -10,5 +10,9 @@ steps:
     cd CI-CD-Benchmarking/web-app && \
     ls
     
- - name: 'bash'
-   args: ['pwd']
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: /bin/sh
+  args:
+  - '-c'
+  - |
+    pwd
