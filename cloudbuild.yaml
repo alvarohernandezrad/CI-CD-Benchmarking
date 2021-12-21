@@ -6,5 +6,5 @@ steps:
   - '-c'
   - |
     git clone https://github.com/alvarohernandezrad/CI-CD-Benchmarking && \
-    cd CI-CD-Benchmarking && \
+    cd CI-CD-Benchmarking/web-app && \
     ls
