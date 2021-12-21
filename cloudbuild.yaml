@@ -1,7 +1,10 @@
 steps:
    # Clone a public repo and write its revision to a VERSION file.
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/alvarohernandezrad/CI-CD-Benchmarking']
-
-- name: 'bash'
-  args: ['cd', 'CI-CD-Benchmarking/web-app', '|', 'ls']
+  entrypoint: /bin/sh
+  args:
+  - '-c'
+  - |
+    git clone https://github.com/alvarohernandezrad/CI-CD-Benchmarking && \
+    cd CI-CD-Benchmarking && \
+    ls
