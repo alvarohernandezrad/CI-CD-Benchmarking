@@ -1,11 +1,5 @@
 steps:
-  # Descargar imagen Git
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['pull', 'gcr.io/cloud-builders/gcloud']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$PROJECT_ID/git', '.']
-
-  # Clone a public repo and write its revision to a VERSION file.
-- name: 'gcr.io/$PROJECT_ID/git'
+   # Clone a public repo and write its revision to a VERSION file.
+- name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/alvarohernandezrad/CI-CD-Benchmarking']
   dir: 'examples/version-file'
