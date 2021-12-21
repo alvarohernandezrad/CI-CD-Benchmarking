@@ -10,9 +10,5 @@ steps:
     cd CI-CD-Benchmarking/web-app && \
     ls
     
-- name: 'gcr.io/cloud-builders/git'
-  entrypoint: /bin/sh
-  args:
-  - '-c'
-  - |
-    ls
+- name: 'docker/compose:1.19.0'
+  args: ['--version']
