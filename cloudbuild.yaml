@@ -5,5 +5,17 @@ steps:
   args:
   - '-c'
   - |
-    apt install net-tools && \
-    ifconfig
+    pwd && \
+    git clone https://github.com/alvarohernandezrad/CI-CD-Benchmarking && \
+    cd CI-CD-Benchmarking/web-app && \
+    ls
+    
+- name: 'docker/compose:1.19.0'
+  args: ['-f', 'CI-CD-Benchmarking/web-app/docker-compose.yml', 'up', '-d']
+  
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: /bin/sh
+  args:
+  - '-c'
+  - |
+    curl http://0.0.0.0:3000/
