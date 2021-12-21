@@ -13,6 +13,17 @@ steps:
 - name: 'docker/compose:1.19.0'
   args: ['-f', 'CI-CD-Benchmarking/web-app/docker-compose.yml', 'up', '-d']
   
+- id: Get Private Artifactory Address
+  name: gcr.io/cloud-builders/gcloud
+  entrypoint: /bin/bash
+  args:
+    - -c
+    - |
+      gcloud compute instances describe jfrog \
+      --zone us-central1-a \
+      --format="value(networkInterfaces.networkIP)" >> _INTERNAL_IP_ADDRESS
+
+  
 - name: 'gcr.io/cloud-builders/git'
   entrypoint: /bin/sh
   args:
