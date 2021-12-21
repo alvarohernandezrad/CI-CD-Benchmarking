@@ -1,5 +1,5 @@
 steps:
-   # Clone a public repo and write its revision to a VERSION file.
+   # Clone a public repo and write its revision to a VERSION file. Hola
 - name: 'gcr.io/cloud-builders/git'
   entrypoint: /bin/sh
   args:
